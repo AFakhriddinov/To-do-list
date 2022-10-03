@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: ;
+
+        }
+
+        #main {
+            width: 500px;
+            background-color: whitesmoke;
+            margin: auto;
+            margin-top: 50px;
+            padding: 10px;
+            height: 500px;
+        }
+
+        #input {
+            margin-left: 50px;
+
+        }
+
+        ol {
+            margin-left: 25px;
+            margin-top: 40px;
+        }
+
+        #button {
+            cursor: pointer;
+        }
+        #alert {
+            margin-left: 50px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <input type="text" id="input" class="input" placeholder="Add a task here">
+
+        <input id="button" type="button" value="Add" onclick="addTask()">
+
+
+        <ol>
+
+        </ol>
+        <p id="alert"></p>
+    </div>
+
+
+    <script>
+
+        function addTask() {
+            let task = document.getElementById("input").value;
+            if (task != "") {
+
+                document.getElementById("alert").innerText = ""
+
+                let li = document.createElement("li");
+                let node = document.createTextNode(task);
+                li.appendChild(node);
+                let mainList = document.querySelector("ol");
+                mainList.appendChild(li);
+                document.getElementsByTagName("li");
+
+                let dlt = document.createElement("button");
+                document.getElementsByTagName("button");
+                li.style.color = "darkblue"
+                dlt.style.height = "15px"
+                dlt.innerText = "X"
+                dlt.style.backgroundColor = "red"
+                dlt.style.border = "none"
+                dlt.style.color = "white"
+                dlt.style.margin = "2px"
+                dlt.style.paddingRight = "15px"
+                dlt.style.borderRadius = "50%"
+                dlt.style.width = "15px"
+                dlt.style.cursor = "pointer"
+                li.appendChild(dlt);
+
+                document.getElementById("input").value = "";
+                document.getElementById("input").focus();
+
+
+                dlt.onclick = function () { dd() };
+
+
+                function dd() {
+                    let remli = document.getElementsByTagName("li");
+                    li.remove(this)
+                    console.log("working")
+                }
+
+            } else  {
+                let ppp = document.getElementById("alert").innerText = "Please add task"
+                document.getElementById("input").focus();
+                
+            } 
+
+        
+
+
+
+        }
+    </script>
+</body>
+
+</html>
